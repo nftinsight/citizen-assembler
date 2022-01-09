@@ -68,7 +68,10 @@ function App() {
     handF = assets.male.bodies[identity.race].handMelee;
     const helmMapping = assets.male.helms[cache.helm];
     const wpnMapping = assets.male.weapons[cache.weapon];
-    const clothMapping = assets.male.clothing[cache.apparel];
+    let clothMapping = assets.male.clothing[cache.apparel];
+    if (clothMapping === 32) {
+      clothMapping = `32-${assets.male.bodies[identity.race]}`
+    }
     if (Array.isArray(helmMapping)) {
       helmM1 = helmMapping[0];
       helmM2 = helmMapping[1];
