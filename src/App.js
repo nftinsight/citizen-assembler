@@ -66,10 +66,12 @@ function App() {
     headF = assets.male.bodies[identity.race].head;
     handM = assets.male.bodies[identity.race].handMelee;
     handF = assets.male.bodies[identity.race].handMelee;
+    let body = assets.male.bodies[identity.race];
     const helmMapping = assets.male.helms[cache.helm];
     const wpnMapping = assets.male.weapons[cache.weapon];
     let clothMapping = assets.male.clothing[cache.apparel];
     if (clothMapping === 32) {
+      body = null;
       clothMapping = `32-${assets.male.bodies[identity.race]}`
     }
     if (Array.isArray(helmMapping)) {
@@ -98,7 +100,7 @@ function App() {
         <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1200 1200">
           <image href={`${maleBaseUrl}/bg/${assets.male.backgrounds[land.location]}.png`}/>
           {weapon1M !== null && <image href={`${maleBaseUrl}/weapon/${weapon1M}.png`}/>}
-          <image href={`${maleBaseUrl}/body/${assets.male.bodies[identity.race]}.png`}/>
+          {body !== null && <image href={`${maleBaseUrl}/body/${body}.png`}/>}
           <image href={`${maleBaseUrl}/cloth/${clothM1}.png`}/>
           <image href={`${maleBaseUrl}/hand/${handType}/${assets.male.bodies[identity.race]}.png`}/>
           {weapon2M !== null && <image href={`${maleBaseUrl}/weapon/${weapon2M}.png`}/>}
