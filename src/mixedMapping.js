@@ -61,6 +61,9 @@ const maleHelmets = {
   "Giant Mech": 45,
   "Bored Ape": 46,
   "Crypto Punk": 47,
+  "Devil 1": 43,
+  "Devil 2": 43,
+  "Devil 3": 43,
   "Angel 1": 42,
   "Angel 2": 48, // missing, but maps to this currently
   "Angel 3": 49, // missing, but maps to this currently
